@@ -17,10 +17,10 @@ const Login = () => {
 
   useEffect(() => {
     if (getToken() !== null) {
-      form.resetFields();
+      form.resetFields(); 
       navigate("/", { replace: true });
     }
-  }, [token]);
+  }, [token]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const onFinishFailed = (errorInfo) => {
     console.log("Failed: ", errorInfo);

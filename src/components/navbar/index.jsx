@@ -12,7 +12,7 @@ const Navbar = () => {
   const notify = () =>
     toast("You've Been Logout", {
       position: "top-center",
-      autoClose: 1000,
+      autoClose: 2000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -32,6 +32,7 @@ const Navbar = () => {
             JDT 11
           </div>
           <div className="text-3x1 absolute right-10 top-8 cursor-pointer md:hidden"></div>
+          <ToastContainer position="top-center" />
           <Button
             type="primary"
             shape="round"
@@ -54,17 +55,17 @@ const Navbar = () => {
             JDT 11
           </div>
           <div className="text-3x1 absolute right-10 top-8 cursor-pointer md:hidden"></div>
-          <ToastContainer position="top-center" />
+          
           <Button
             type="danger"
             shape="round"
             size={"large"}
             onClick={() => {
-              notify();
               localStorage.removeItem("tokenBearer");
+              navigate(`/`);
               setTimeout(() => {
-                navigate(`/`);  
-              }, 2000);
+                notify();
+              }, 500);
             }}
           >
             Logout

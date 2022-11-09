@@ -65,7 +65,7 @@ const Navbar = () => {
               navigate(`/`);
               setTimeout(() => {
                 notify();
-              }, 500);
+              }, 200);
             }}
           >
             Logout
